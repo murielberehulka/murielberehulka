@@ -86,8 +86,8 @@ nnoremap <A-u> za
 nnoremap <A-o> zR
 inoremap <A-S-u> <Esc>zci
 inoremap <A-S-o> <Esc>zoi
-inoremap <A-u> zai
-inoremap <A-o> zRi
+inoremap <A-u> <Esc>zai
+inoremap <A-o> <Esc>zRi
 " movement
 nnoremap w k
 nnoremap a h
