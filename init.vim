@@ -60,6 +60,9 @@ colorscheme atom-dark-256
 hi Normal guibg=black ctermbg=black
 
 nnoremap <A-f> :NERDTreeToggle<CR>
+inoremap <A-f> <Esc>:NERDTreeToggle<CR>
+nnoremap <A-S-f> :FZF<CR>
+inoremap <A-S-f> <Esc>:FZF<CR>
 nnoremap <A-S-t> :sp<CR>:terminal<CR>
 nnoremap <C-s> :wa<CR>
 inoremap <C-s> <Esc>:wa<CR>i
@@ -77,7 +80,9 @@ nnoremap <A-9> 9gt
 nnoremap <A-0> 10gt
 nnoremap <C-w> :wq<CR>
 nnoremap <C-t> :tabnew<CR>
+nnoremap <C-S-w> :q<CR>
 inoremap <C-w> <Esc>:wq<CR>
+inoremap <C-S-w> <Esc>:q<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 " folding
 nnoremap <A-S-u> zc
@@ -105,18 +110,20 @@ nnoremap <S-w> 4k
 nnoremap <S-s> 4j
 inoremap <A-S-w> <Esc>4ka
 inoremap <A-S-s> <Esc>4ja
-nnoremap <S-a> B
-nnoremap <S-d> El
-inoremap <A-S-a> <Esc>Bi
-inoremap <A-S-d> <Esc>Eli
+nnoremap <S-a> <C-Left>
+nnoremap <S-d> <C-Right>
+inoremap <A-S-a> <Esc><C-Left>i
+inoremap <A-S-d> <Esc><C-Right>i
 " go to insert mode
 nnoremap i a
-nnoremap J I
-nnoremap L A
+nnoremap h I
+nnoremap ç A
 nnoremap I O
 nnoremap K o
-inoremap <A-S-l> <Esc>A
-inoremap <A-S-j> <Esc>I
+inoremap <A-h> <Esc>A
+inoremap <A-ç> <Esc>
+inoremap <A-k> <Esc>o
+inoremap <A-i> <Esc>O
 " delete
 inoremap <A-j> <Esc>xi
 inoremap <A-l> <Esc>lxi
@@ -130,6 +137,12 @@ nnoremap <C-z> u
 nnoremap <C-y> :redo<CR>
 inoremap <C-z> <Esc>ui
 inoremap <C-y> <Esc>:redo<CR>i
+" select all
+
+nnoremap <F1> :!cargo run --release<CR>
+nnoremap <F2> :!cargo run --bin compile --release<CR> 
+inoremap <F1> <Esc>:! cargo run --release<CR>
+inoremap <F2> <Esc>:! cargo run --bin compile --release<CR>
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -144,6 +157,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'frazrepo/vim-rainbow'
 Plug 'Yggdroot/indentLine'
+Plug 'junegunn/fzf'
 
 call plug#end()
 
