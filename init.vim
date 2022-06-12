@@ -1,7 +1,7 @@
-set encoding=utf-8
+let g:system_copy#paste_command='xclip -sel clipboard -o'set encoding=utf-8
 filetype plugin indent on
 syntax on
-set clipboard=unnamedplus
+set clipboard=unnamed
 set completeopt=noinsert,menuone,noselect
 set hidden
 set inccommand=split
@@ -55,9 +55,12 @@ let g:indentLine_enabled = 1
 let g:indentLine_setColors = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_bgcolor_gui = '#00000000'
+let g:system_copy#copy_command='xclip -sel clipboard'
+let g:system_copy#paste_command='xclip -sel clipboard -o'
 
 colorscheme atom-dark-256
-hi Normal guibg=black ctermbg=black
+hi Normal guibg=NONE ctermbg=NONE 
+hi clear LineNr
 
 nnoremap <A-f> :NERDTreeToggle<CR>
 inoremap <A-f> <Esc>:NERDTreeToggle<CR>
@@ -67,6 +70,7 @@ nnoremap <A-S-t> :sp<CR>:terminal<CR>
 nnoremap <C-s> :wa<CR>
 inoremap <C-s> <Esc>:wa<CR>i
 inoremap <A-q> <Esc>
+inoremap <C-R> <Esc>:so %<CR>i
 " tabs
 nnoremap <A-1> 1gt
 nnoremap <A-2> 2gt
@@ -85,14 +89,14 @@ inoremap <C-w> <Esc>:wq<CR>
 inoremap <C-S-w> <Esc>:q<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 " folding
-nnoremap <A-S-u> zc
-nnoremap <A-S-o> zo
-nnoremap <A-u> za
-nnoremap <A-o> zR
+nnoremap <A-S-u> zM
+nnoremap <A-S-o> zR
+nnoremap <A-u> zc
+nnoremap <A-o> zo
 inoremap <A-S-u> <Esc>zci
-inoremap <A-S-o> <Esc>zoi
+inoremap <A-S-o> <Esc>zRi
 inoremap <A-u> <Esc>zai
-inoremap <A-o> <Esc>zRi
+inoremap <A-o> <Esc>zoi
 " movement
 nnoremap w k
 nnoremap a h
@@ -116,28 +120,31 @@ inoremap <A-S-a> <Esc><C-Left>i
 inoremap <A-S-d> <Esc><C-Right>i
 " go to insert mode
 nnoremap i a
-nnoremap h I
-nnoremap ç A
+nnoremap <A-h> I
+nnoremap <A-m> A
 nnoremap I O
 nnoremap K o
-inoremap <A-h> <Esc>A
-inoremap <A-ç> <Esc>
+inoremap <A-h> <Esc>I
+inoremap <A-m> <Esc>A
 inoremap <A-k> <Esc>o
 inoremap <A-i> <Esc>O
 " delete
-inoremap <A-j> <Esc>xi
-inoremap <A-l> <Esc>lxi
-inoremap <A-S-j> <Esc>dbi
-inoremap <A-S-l> <Esc>ldei
+inoremap <A-j> <BS>
+inoremap <A-l> <Del>
+inoremap <A-S-j> <Esc>dwi
+inoremap <A-S-l> <Esc>dbi
 inoremap <C-x> <Esc>Vxi
+inoremap <C-S-c> <Esc>Vy
 inoremap <C-v> <Esc>pli
 inoremap <A-v> <Esc>lv
+" select
+nnoremap <C-a> ggVG
+inoremap <C-a> <Esc>ggVGG
 " story
 nnoremap <C-z> u
 nnoremap <C-y> :redo<CR>
 inoremap <C-z> <Esc>ui
 inoremap <C-y> <Esc>:redo<CR>i
-" select all
 
 nnoremap <F1> :!cargo run --release<CR>
 nnoremap <F2> :!cargo run --bin compile --release<CR> 
@@ -158,6 +165,7 @@ Plug 'dense-analysis/ale'
 Plug 'frazrepo/vim-rainbow'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf'
+Plug 'christoomey/vim-system-copy'
 
 call plug#end()
 
