@@ -1,0 +1,149 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "RUN"
+    },
+    {
+        "key": "f4",
+        "command": "workbench.action.tasks.runTask",
+        "args": "COMPILE"
+    },
+    // Movement
+    {
+        "key": "alt+d",
+        "command": "cursorRight"
+    },
+    {
+        "key": "alt+a",
+        "command": "cursorLeft"
+    },
+    {
+        "key": "alt+w",
+        "command": "cursorUp"
+    },
+    {
+        "key": "alt+s",
+        "command": "cursorDown"
+    },
+    {
+        "key": "alt+shift+a",
+        "command": "cursorWordLeft"
+    },
+    {
+        "key": "alt+shift+d",
+        "command": "cursorWordRight"
+    },
+    {
+        "key": "alt+shift+w",
+        "command": "commands.run",
+        "args": {
+          "sequence": [
+            "cursorUp",
+            "cursorUp",
+            "cursorUp",
+            "cursorUp",
+          ]
+        }
+    },
+    {
+        "key": "alt+shift+s",
+        "command": "commands.run",
+        "args": {
+          "sequence": [
+            "cursorDown",
+            "cursorDown",
+            "cursorDown",
+            "cursorDown",
+          ]
+        }
+    },
+    {
+        "key": "alt+q",
+        "command": "cursorTop"
+    },
+    {
+        "key": "alt+e",
+        "command": "cursorBottom"
+    },
+    // Line
+    {
+        "key": "alt+m",
+        "command": "cursorLineEnd"
+    },
+    {
+        "key": "alt+n",
+        "command": "cursorLineStart"
+    },
+    // Delete
+    {
+        "key": "alt+j",
+        "command": "deleteLeft"
+    },
+    {
+        "key": "alt+l",
+        "command": "deleteRight"
+    },
+    {
+        "key": "alt+shift+j",
+        "command": "deleteWordLeft"
+    },
+    {
+        "key": "alt+shift+l",
+        "command": "deleteWordRight"
+    },
+    // Insert
+    {
+        "key": "alt+k",
+        "command": "editor.action.insertLineAfter"
+    },
+    {
+        "key": "alt+i",
+        "command": "editor.action.insertLineBefore"
+    },
+    // Folding
+    {
+        "key": "alt+o",
+        "command": "editor.unfold"
+    },
+    {
+        "key": "alt+u",
+        "command": "editor.fold"
+    },
+    // Search
+    {
+        "key": "alt+f",
+        "command": "actions.findWithSelection"
+    },
+    // Select
+    {
+        "key": "ctrl+j",
+        "command": "cursorLeftSelect"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "cursorRightSelect"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "cursorUpSelect"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "cursorDownSelect"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "cursorWordStartLeftSelect"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "cursorWordEndRightSelect"
+    },
+    // Comments
+    {
+        "key": "alt+c",
+        "command": "editor.action.commentLine"
+    },
+]
