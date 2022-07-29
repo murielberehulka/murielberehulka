@@ -146,4 +146,17 @@
         "key": "alt+c",
         "command": "editor.action.commentLine"
     },
+    // Git
+    {
+        "key": "alt+numpad_divide",
+        "command": "git.stageAll"
+    },
+    {
+        "key": "alt+numpad_multiply",
+        "command": "git.commit"
+    },
+    {
+        "key": "alt+numpad_subtract",
+        "command": "git.push"
+    },
 ]
